@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.30.3">
+    <meta name="project" content="Plausible v0.0.1">
+
+    <title>Plausible.Props — Plausible v0.0.1</title>
+    <link rel="stylesheet" href="dist/html-elixir-P5GXSCHE.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-NBND3S2D.js"></script>
+    <script src="dist/sidebar_items-E147D7A7.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-CGDDOCMI.js"></script>
+
+
+  </head>
+  <body data-type="modules" class="page-module">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+      <a href="readme.html">
+        <img src="assets/logo.png" alt="Plausible" class="sidebar-projectImage">
+      </a>
+
+    <div class="sidebar-projectDetails">
+      <a href="readme.html" class="sidebar-projectName" translate="no">
+Plausible
+      </a>
+      <div class="sidebar-projectVersion" translate="no">
+        v0.0.1
+      </div>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+        <li><a id="tasks-list-link" href="#full-list"><span translate="no">Mix</span> Tasks</a></li>
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list"></ul>
+</section>
+
+<section class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="icon-action display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/props.ex#L1" title="View Source" class="icon-action" rel="help">
+      <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+      <span class="sr-only">View Source</span>
+    </a>
+
+  <span translate="no">Plausible.Props</span> 
+  <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>Context module for handling custom event props.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        Summary
+      </a>
+    </h1>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:prop/0" translate="no">prop()</a>
+
+      </div>
+
+    </div>
+
+</div>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#allow/2" translate="no">allow(site, prop_or_props)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Allows a prop key or a list of props keys to be included in ClickHouse
+queries. Allowing prop keys does not affect ingestion, as we don't want any
+data to be dropped or lost.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#allow_changeset/2" translate="no">allow_changeset(site, prop_or_props)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#allow_existing_props/1" translate="no">allow_existing_props(site)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Allows the 300 most frequent props keys for a specific site over
+the past 6 months.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#configured?/1" translate="no">configured?(site)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns whether the site has configured custom props or not.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#disallow/2" translate="no">disallow(site, prop_or_props)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Removes previously allowed prop key(s) from the allow list. This means this
+prop key won't be included in ClickHouse queries. This doesn't drop any
+ClickHouse data, nor affects ingestion.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#ensure_prop_key_accessible/2" translate="no">ensure_prop_key_accessible(prop_key, user)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#internal_keys/0" translate="no">internal_keys()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Lists prop keys used internally.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#max_prop_key_length/0" translate="no">max_prop_key_length()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#max_prop_value_length/0" translate="no">max_prop_value_length()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#max_props/0" translate="no">max_props()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#suggest_keys_to_allow/2" translate="no">suggest_keys_to_allow(site, limit \\ 300)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Queries the events table to fetch the 300 most frequent prop keys
+for a specific site over the past 6 months, excluding keys that are already
+allowed.</p></div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+Types
+      </a>
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:prop/0">
+
+  <div class="detail-header">
+    <a href="#t:prop/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">prop()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/props.ex#L8" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> prop() :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+Functions
+      </a>
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="allow/2">
+
+  <div class="detail-header">
+    <a href="#allow/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">allow(site, prop_or_props)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/props.ex#L26" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> allow(<a href="Plausible.Site.html#t:t/0">Plausible.Site.t</a>(), [<a href="#t:prop/0">prop</a>()] | <a href="#t:prop/0">prop</a>()) ::
+  {:ok, <a href="Plausible.Site.html#t:t/0">Plausible.Site.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}
+  | {:error, :upgrade_required}</pre>
+
+      </div>
+
+<p>Allows a prop key or a list of props keys to be included in ClickHouse
+queries. Allowing prop keys does not affect ingestion, as we don't want any
+data to be dropped or lost.</p>
+  </section>
+</section>
+<section class="detail" id="allow_changeset/2">
+
+  <div class="detail-header">
+    <a href="#allow_changeset/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">allow_changeset(site, prop_or_props)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/props.ex#L35" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="allow_existing_props/1">
+
+  <div class="detail-header">
+    <a href="#allow_existing_props/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">allow_existing_props(site)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/props.ex#L79" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> allow_existing_props(<a href="Plausible.Site.html#t:t/0">Plausible.Site.t</a>()) ::
+  {:ok, <a href="Plausible.Site.html#t:t/0">Plausible.Site.t</a>()} | {:error, :upgrade_required}</pre>
+
+      </div>
+
+<p>Allows the 300 most frequent props keys for a specific site over
+the past 6 months.</p>
+  </section>
+</section>
+<section class="detail" id="configured?/1">
+
+  <div class="detail-header">
+    <a href="#configured?/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">configured?(site)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/props.ex#L140" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Returns whether the site has configured custom props or not.</p>
+  </section>
+</section>
+<section class="detail" id="disallow/2">
+
+  <div class="detail-header">
+    <a href="#disallow/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">disallow(site, prop_or_props)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/props.ex#L49" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> disallow(<a href="Plausible.Site.html#t:t/0">Plausible.Site.t</a>(), [<a href="#t:prop/0">prop</a>()] | <a href="#t:prop/0">prop</a>()) ::
+  {:ok, <a href="Plausible.Site.html#t:t/0">Plausible.Site.t</a>()} | {:error, <a href="https://hexdocs.pm/ecto/3.10.3/Ecto.Changeset.html#t:t/0">Ecto.Changeset.t</a>()}</pre>
+
+      </div>
+
+<p>Removes previously allowed prop key(s) from the allow list. This means this
+prop key won't be included in ClickHouse queries. This doesn't drop any
+ClickHouse data, nor affects ingestion.</p>
+  </section>
+</section>
+<section class="detail" id="ensure_prop_key_accessible/2">
+
+  <div class="detail-header">
+    <a href="#ensure_prop_key_accessible/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">ensure_prop_key_accessible(prop_key, user)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/props.ex#L99" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="internal_keys/0">
+
+  <div class="detail-header">
+    <a href="#internal_keys/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">internal_keys()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/props.ex#L97" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Lists prop keys used internally.</p><p>These props should be allowed by default, and should not be displayed in the
+props settings page. For example, <code class="inline">url</code> is a special prop key used for file
+downloads and outbound links. It doesn't make sense to remove this prop key
+from the allow list, or to suggest users to add this prop key.</p>
+  </section>
+</section>
+<section class="detail" id="max_prop_key_length/0">
+
+  <div class="detail-header">
+    <a href="#max_prop_key_length/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">max_prop_key_length()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/props.ex#L14" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="max_prop_value_length/0">
+
+  <div class="detail-header">
+    <a href="#max_prop_value_length/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">max_prop_value_length()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/props.ex#L17" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="max_props/0">
+
+  <div class="detail-header">
+    <a href="#max_props/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">max_props()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/props.ex#L11" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="suggest_keys_to_allow/2">
+
+    <span id="suggest_keys_to_allow/1"></span>
+
+  <div class="detail-header">
+    <a href="#suggest_keys_to_allow/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">suggest_keys_to_allow(site, limit \\ 300)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/props.ex#L113" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> suggest_keys_to_allow(<a href="Plausible.Site.html#t:t/0">Plausible.Site.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: [<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()]</pre>
+
+      </div>
+
+<p>Queries the events table to fetch the 300 most frequent prop keys
+for a specific site over the past 6 months, excluding keys that are already
+allowed.</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+        <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="Plausible.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.30.3) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad: true})</script>
+
+  </body>
+</html>
